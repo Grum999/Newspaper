@@ -42,4 +42,4 @@ When you want to execute *Newspaper*, simply go to **Tools** -> **Scripts** and 
 You should receive a copy of the GNU General Public License along with KanvasBuddy. If not, see <https://www.gnu.org/licenses/>.
 
 
-Long story short: you're free to download, modify as well as redistribute *leNewLayerColorName* as long as this ability is preserved and you give contributors proper credit. This is the same license under which Krita is released, ensuring compatibility between the two.
+Long story short: you're free to download, modify as well as redistribute *Newspaper* as long as this ability is preserved and you give contributors proper credit. This is the same license under which Krita is released, ensuring compatibility between the two.
