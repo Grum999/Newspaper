@@ -116,7 +116,7 @@ else:
     PLUGIN_EXEC_FROM = 'SCRIPTER_PLUGIN'
 
 
-PLUGIN_VERSION = '1.0.0'
+PLUGIN_VERSION = '1.1.0'
 EXTENSION_ID = 'pykrita_newspaper'
 PLUGIN_MENU_ENTRY = 'Newspaper'
 PLUGIN_DIALOG_TITLE = "{0} - {1}".format('Newspaper', PLUGIN_VERSION)
@@ -128,7 +128,9 @@ DBOX_WARNING ='w'
 
 # Define Output modes
 OUTPUT_MODE_MONO = i18n('Monochrome')
+OUTPUT_MODE_CMY = i18n('Three color (CMY - Pictures)')
 OUTPUT_MODE_CMYK = i18n('Four color (CMYK - Pictures)')
+OUTPUT_MODE_CMYrK = i18n('Four color (CMY+K - Pictures)')
 OUTPUT_MODE_CMYpK1 = i18n('Four color (CMY+K - Comics #1)')
 OUTPUT_MODE_CMYpK2 = i18n('Four color (CMY+K - Comics #2)')
 
@@ -331,6 +333,121 @@ OUTPUT_MODE_NFO = {
                     }
                 ]
     },
+
+    OUTPUT_MODE_CMY : {
+        'description' : 'Decompose image a into 3 primary colors (CMY) and apply halftone. The black value is obtained as a pure coombination of Cyan, Magenta and Yellow',
+        'groupLayerName' : 'Newspaper (CMY)',
+        'layers' : [
+                    {
+                        'color' : 'Y',
+                        'process': [
+                                {
+                                    'action' : 'duplicate',
+                                    'value' : '@original'
+                                },
+                                {
+                                    'action' : 'new',
+                                    'value' : {
+                                                'type' : 'filllayer',
+                                                'color' :  QColor(Qt.yellow)
+                                            }
+                                },
+                                {
+                                    'action' : 'blending mode',
+                                    'value' : 'add'
+                                },
+                                {
+                                    'action' : 'merge down',
+                                    'value' : None
+                                },
+                                {
+                                    'action' : 'blending mode',
+                                    'value' : 'multiply'
+                                },
+                                {
+                                    'action' : 'filter',
+                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                },
+                                {
+                                    'action' : 'newspaper',
+                                    'value' : None                      # automatically use right configuration
+                                }
+                            ]
+                    },
+                    {
+                        'color' : 'M',
+                        'process': [
+                                {
+                                    'action' : 'duplicate',
+                                    'value' : '@original'
+                                },
+                                {
+                                    'action' : 'new',
+                                    'value' : {
+                                                'type' : 'filllayer',
+                                                'color' :  QColor(Qt.magenta)
+                                            }
+                                },
+                                {
+                                    'action' : 'blending mode',
+                                    'value' : 'add'
+                                },
+                                {
+                                    'action' : 'merge down',
+                                    'value' : None
+                                },
+                                {
+                                    'action' : 'blending mode',
+                                    'value' : 'multiply'
+                                },
+                                {
+                                    'action' : 'filter',
+                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                },
+                                {
+                                    'action' : 'newspaper',
+                                    'value' : None                      # automatically use right configuration
+                                }
+                            ]
+                    },
+                    {
+                        'color' : 'C',
+                        'process': [
+                                {
+                                    'action' : 'duplicate',
+                                    'value' : '@original'
+                                },
+                                {
+                                    'action' : 'new',
+                                    'value' : {
+                                                'type' : 'filllayer',
+                                                'color' :  QColor(Qt.cyan)
+                                            }
+                                },
+                                {
+                                    'action' : 'blending mode',
+                                    'value' : 'add'
+                                },
+                                {
+                                    'action' : 'merge down',
+                                    'value' : None
+                                },
+                                {
+                                    'action' : 'blending mode',
+                                    'value' : 'multiply'
+                                },
+                                {
+                                    'action' : 'filter',
+                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                },
+                                {
+                                    'action' : 'newspaper',
+                                    'value' : None                      # automatically use right configuration
+                                }
+                            ]
+                    }
+                ]
+    },
     OUTPUT_MODE_CMYK : {
         'description' : 'Decompose image a into four color CMYK halftone, as used in color printing (optmised for pictures)',
         'groupLayerName' : 'Newspaper (CMYK)',
@@ -498,6 +615,138 @@ OUTPUT_MODE_NFO = {
                     }
                 ]
     },
+    OUTPUT_MODE_CMYrK : {
+        'description' : 'Decompose image a into 4 colors (CMYK) and apply halftone. The <a href="https://en.wikipedia.org/wiki/Rich_black">Registration Black</a> value is obtained as a coombination of Cyan, Magenta and Yellow with additional black',
+        'groupLayerName' : 'Newspaper (CMY+rK)',
+        'layers' : [
+                    {
+                        'color' : 'K',
+                        'process': [
+                                {
+                                    'action' : 'duplicate',
+                                    'value' : '@original'
+                                },
+                                {
+                                    'action' : 'filter',
+                                    'value' : 'name=desaturate;type=5'  # desaturate method = max
+                                },
+                                {
+                                    'action' : 'newspaper',
+                                    'value' : None                      # automatically use right configuration
+                                }
+                            ]
+                    },
+                    {
+                        'color' : 'Y',
+                        'process': [
+                                {
+                                    'action' : 'duplicate',
+                                    'value' : '@original'
+                                },
+                                {
+                                    'action' : 'new',
+                                    'value' : {
+                                                'type' : 'filllayer',
+                                                'color' :  QColor(Qt.yellow)
+                                            }
+                                },
+                                {
+                                    'action' : 'blending mode',
+                                    'value' : 'add'
+                                },
+                                {
+                                    'action' : 'merge down',
+                                    'value' : None
+                                },
+                                {
+                                    'action' : 'blending mode',
+                                    'value' : 'multiply'
+                                },
+                                {
+                                    'action' : 'filter',
+                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                },
+                                {
+                                    'action' : 'newspaper',
+                                    'value' : None                      # automatically use right configuration
+                                }
+                            ]
+                    },
+                    {
+                        'color' : 'M',
+                        'process': [
+                                {
+                                    'action' : 'duplicate',
+                                    'value' : '@original'
+                                },
+                                {
+                                    'action' : 'new',
+                                    'value' : {
+                                                'type' : 'filllayer',
+                                                'color' :  QColor(Qt.magenta)
+                                            }
+                                },
+                                {
+                                    'action' : 'blending mode',
+                                    'value' : 'add'
+                                },
+                                {
+                                    'action' : 'merge down',
+                                    'value' : None
+                                },
+                                {
+                                    'action' : 'blending mode',
+                                    'value' : 'multiply'
+                                },
+                                {
+                                    'action' : 'filter',
+                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                },
+                                {
+                                    'action' : 'newspaper',
+                                    'value' : None                      # automatically use right configuration
+                                }
+                            ]
+                    },
+                    {
+                        'color' : 'C',
+                        'process': [
+                                {
+                                    'action' : 'duplicate',
+                                    'value' : '@original'
+                                },
+                                {
+                                    'action' : 'new',
+                                    'value' : {
+                                                'type' : 'filllayer',
+                                                'color' :  QColor(Qt.cyan)
+                                            }
+                                },
+                                {
+                                    'action' : 'blending mode',
+                                    'value' : 'add'
+                                },
+                                {
+                                    'action' : 'merge down',
+                                    'value' : None
+                                },
+                                {
+                                    'action' : 'blending mode',
+                                    'value' : 'multiply'
+                                },
+                                {
+                                    'action' : 'filter',
+                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                },
+                                {
+                                    'action' : 'newspaper',
+                                    'value' : None                      # automatically use right configuration
+                                }
+                            ]
+                    }
+                ]
+    },
+
     OUTPUT_MODE_CMYpK1: {
         'description' : 'Decompose image a into four color CMYK halftone (optmised for comics style pictures, method #1)',
         'groupLayerName' : 'Newspaper (CMY+K #1)',
@@ -694,6 +943,22 @@ OUTPUT_MODE_NFO = {
                                 {
                                     'action' : 'filter',
                                     'value' : 'name=desaturate;type=5'  # desaturate method = max
+                                },
+                                {
+                                    'action' : 'duplicate',
+                                    'value' : '@original'
+                                },
+                                {
+                                    'action' : 'filter',
+                                    'value' : 'name=desaturate;type=5'  # desaturate method = max
+                                },
+                                {
+                                    'action' : 'blending mode',
+                                    'value' : 'add'
+                                },
+                                {
+                                    'action' : 'merge down',
+                                    'value' : None
                                 }
                             ]
                     },
@@ -1488,7 +1753,9 @@ class Newspaper(Extension):
 
         dlgMain.cmbMode.addItems([
                 OUTPUT_MODE_MONO,
+                OUTPUT_MODE_CMY,
                 OUTPUT_MODE_CMYK,
+                OUTPUT_MODE_CMYrK,
                 OUTPUT_MODE_CMYpK1,
                 OUTPUT_MODE_CMYpK2
             ])
