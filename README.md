@@ -17,7 +17,7 @@ Plugin provides differents tuning options to define final result:
 ## Download, Install & Execute
 
 ### Download
-+ **[ZIP ARCHIVE - v1.0.0](https://github.com/Grum999/Newspaper/releases/download/V1.0.0/newspaper.zip)**
++ **[ZIP ARCHIVE - v1.1.0](https://github.com/Grum999/Newspaper/releases/download/V1.1.0/newspaper.zip)**
 + **[SOURCE](https://github.com/Grum999/Newspaper)**
 
 
