@@ -17,7 +17,7 @@ Plugin provides differents tuning options to define final result:
 ## Download, Install & Execute
 
 ### Download
-+ **[ZIP ARCHIVE - v1.1.0](https://github.com/Grum999/Newspaper/releases/download/V1.1.0/newspaper.zip)**
++ **[ZIP ARCHIVE - v1.1.1](https://github.com/Grum999/Newspaper/releases/download/V1.1.1/newspaper.zip)**
 + **[SOURCE](https://github.com/Grum999/Newspaper)**
 
 
@@ -31,6 +31,32 @@ To enable *Newspaper* go to **Settings** -> **Configure Krita...** -> **Python P
 When you want to execute *Newspaper*, simply go to **Tools** -> **Scripts** and select **Newspaper**.
 
 
+### What's new?
+_[2020-05-01] Version 1.1.1_
+- Compatibility with Krita 4.3.0
+
+_[2020-05-01] Version 1.1.0_
+- Add **Three color (CMY - Pictures)** mode
+*No black layer, Black key is obtained by the combination of Cyan, Magenta, Yellow*
+- Add a **Four color (CMY+K - Pictures)** mode
+*Use of [registration black](https://en.wikipedia.org/wiki/Rich_black): black key is obtained by the combination of Cyan, Magenta, Yellow, and an additional black layer is added*
+- Improve the **Four color (CMY+K - Comics #2)**
+
+
+### Bugs
+Plugin has been tested with Krita 4.3.0 (appimage) on Linux Debian 10
+- Tested on MacOS Catalina by @Carlos [thanks!], seems to work (_Version 4.2.9_)
+- Not tested on Linux non-appimage (ie: appimage include Python 3.8 + needed Qt libraries)
+- Tested on Windows 10 by @slls666 [thanks!], seems to work (_Version 4.2.9_)
+- Tested on Windows 8.1 by @djwaterman [thanks!], seems to work (_Version 4.2.9_)
+
+
+### What’s next?
+- Some improvements can be made to user interface
+- Maybe adding a preset management allowing user to save preferred configuration(s) rather than having to redefine everything each time :grimacing:
+- Speedup processing using multi-thread
+
+
 ## License
 
 ### Newspaper is released under the GNU General Public License (version 3 or any later version).
@@ -42,4 +68,4 @@ When you want to execute *Newspaper*, simply go to **Tools** -> **Scripts** and 
 You should receive a copy of the GNU General Public License along with KanvasBuddy. If not, see <https://www.gnu.org/licenses/>.
 
 
-Long story short: you're free to download, modify as well as redistribute *Newspaper* as long as this ability is preserved and you give contributors proper credit. This is the same license under which Krita is released, ensuring compatibility between the two.
+Long story short: you're free to download, modify as well as redistribute *leNewLayerColorName* as long as this ability is preserved and you give contributors proper credit. This is the same license under which Krita is released, ensuring compatibility between the two.
