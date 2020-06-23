@@ -32,7 +32,7 @@ When you want to execute *Newspaper*, simply go to **Tools** -> **Scripts** and 
 
 
 ### What's new?
-_[2020-05-01] Version 1.1.1_
+_[2020-06-23] Version 1.1.1_
 - Compatibility with Krita 4.3.0
 
 _[2020-05-01] Version 1.1.0_
