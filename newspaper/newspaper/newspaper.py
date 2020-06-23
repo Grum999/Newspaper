@@ -116,7 +116,7 @@ else:
     PLUGIN_EXEC_FROM = 'SCRIPTER_PLUGIN'
 
 
-PLUGIN_VERSION = '1.1.0'
+PLUGIN_VERSION = '1.1.1'
 EXTENSION_ID = 'pykrita_newspaper'
 PLUGIN_MENU_ENTRY = 'Newspaper'
 PLUGIN_DIALOG_TITLE = "{0} - {1}".format('Newspaper', PLUGIN_VERSION)
@@ -1981,15 +1981,16 @@ class Newspaper(Extension):
 
                 newLayer = document.createFillLayer(value['color'].name(), "color", infoObject, selection)
 
-                # Need to force generator otherwise, information provided when creating layer seems to not be taken in
-                # account
-                newLayer.setGenerator("color", infoObject)
-
             if newLayer:
                 self.layerNum+=1
                 newLayer.setName("np-n{0}".format(self.layerNum))
 
                 parentGroupLayer.addChildNode(newLayer, currentProcessedLayer)
+
+                # Need to force generator otherwise, information provided when creating layer seems to not be taken in
+                # account
+                newLayer.setGenerator("color", infoObject)
+
                 return newLayer
             else:
                 return None
