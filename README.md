@@ -53,6 +53,8 @@ Plugin has been tested with Krita 4.3.0 (appimage) on Linux Debian 10
 
 ### What’s next?
 - Some improvements can be made to user interface
+-- Allow to zoom (in/out) preview
+-- Pan preview with mouse
 - Maybe adding a preset management allowing user to save preferred configuration(s) rather than having to redefine everything each time :grimacing:
 - Speedup processing using multi-thread
 
