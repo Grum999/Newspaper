@@ -116,7 +116,7 @@ else:
     PLUGIN_EXEC_FROM = 'SCRIPTER_PLUGIN'
 
 
-PLUGIN_VERSION = '1.1.1'
+PLUGIN_VERSION = '1.2.0'
 EXTENSION_ID = 'pykrita_newspaper'
 PLUGIN_MENU_ENTRY = 'Newspaper'
 PLUGIN_DIALOG_TITLE = "{0} - {1}".format('Newspaper', PLUGIN_VERSION)
@@ -2623,7 +2623,7 @@ class Newspaper(Extension):
                 currentProcessedLayer.setName(parseLayerName(self.__outputOptions['layerColorName'], layer['color']))
 
 
-        document.rootNode().addChildNode(parentGroupLayer, originalLayer)
+        originalLayer.parentNode().addChildNode(parentGroupLayer, originalLayer)
         self.progressNext(pProgress)
 
         if self.__outputOptions['originalLayerAction'] == ORIGINAL_LAYER_KEEPVISIBLE:

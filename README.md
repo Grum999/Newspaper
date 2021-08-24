@@ -17,7 +17,7 @@ Plugin provides differents tuning options to define final result:
 ## Download, Install & Execute
 
 ### Download
-+ **[ZIP ARCHIVE - v1.1.1](https://github.com/Grum999/Newspaper/releases/download/V1.1.1/newspaper.zip)**
++ **[ZIP ARCHIVE - v1.2.0](https://github.com/Grum999/Newspaper/releases/download/V1.2.0/newspaper.zip)**
 + **[SOURCE](https://github.com/Grum999/Newspaper)**
 
 
@@ -32,6 +32,9 @@ When you want to execute *Newspaper*, simply go to **Tools** -> **Scripts** and 
 
 
 ### What's new?
+_[2020-06-23] Version 1.2.0_
+- Fix bug: now a layer located in a group layer is processed, don't need anymore to work on layer from document root
+
 _[2020-06-23] Version 1.1.1_
 - Compatibility with Krita 4.3.0
 
@@ -44,7 +47,7 @@ _[2020-05-01] Version 1.1.0_
 
 
 ### Bugs
-Plugin has been tested with Krita 4.3.0 (appimage) on Linux Debian 10
+Plugin has been tested with Krita 5.0.0 (appimage) on Linux Debian 10
 - Tested on MacOS Catalina by @Carlos [thanks!], seems to work (_Version 4.2.9_)
 - Not tested on Linux non-appimage (ie: appimage include Python 3.8 + needed Qt libraries)
 - Tested on Windows 10 by @slls666 [thanks!], seems to work (_Version 4.2.9_)
@@ -53,8 +56,6 @@ Plugin has been tested with Krita 4.3.0 (appimage) on Linux Debian 10
 
 ### What’s next?
 - Some improvements can be made to user interface
--- Allow to zoom (in/out) preview
--- Pan preview with mouse
 - Maybe adding a preset management allowing user to save preferred configuration(s) rather than having to redefine everything each time :grimacing:
 - Speedup processing using multi-thread
 

@@ -52,9 +52,9 @@ from PyQt5.QtGui import (
 # -----------------------------------------------------------------------------
 PkTk.setModuleInfo(
     'ekrita',
-    '1.0.0',
+    '1.1.0',
     'PyKrita Toolkit EKrita',
-    'Extent Krita API to simplify some commons'
+    'Extent Krita API to simplify some commons actions'
 )
 
 # -----------------------------------------------------------------------------
@@ -336,10 +336,23 @@ class EKritaNode:
         if not isinstance(position, QPoint):
             raise EInvalidType("Given `position` must be a valid <QPoint> ")
 
+        layerNeedBackConversion=False
+        layerColorModel=layerNode.colorModel()
+        layerColorDepth=layerNode.colorDepth()
+        layerColorProfile=layerNode.colorProfile()
+
+        if layerColorModel != "RGBA" or layerColorDepth != 'U8':
+            # we need to convert layer to RGBA/U8
+            layerNode.setColorSpace("RGBA", "U8", "sRGB-elle-V2-srgbtrc.icc")
+            layerNeedBackConversion=True
+
         ptr = image.bits()
         ptr.setsize(image.byteCount())
 
         layerNode.setPixelData(QByteArray(ptr.asstring()), position.x(), position.y(), image.width(), image.height())
+
+        if layerNeedBackConversion:
+            layerNode.setColorSpace(layerColorModel, layerColorDepth, layerColorProfile)
 
 
     @staticmethod
