@@ -32,7 +32,7 @@ When you want to execute *Newspaper*, simply go to **Tools** -> **Scripts** and 
 
 
 ### What's new?
-_[2020-06-23] Version 1.2.0_
+_[2021-08-24] Version 1.2.0_
 - Fix bug: now a layer located in a group layer is processed, don't need anymore to work on layer from document root
 
 _[2020-06-23] Version 1.1.1_
