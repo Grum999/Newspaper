@@ -2590,6 +2590,7 @@ class Newspaper(Extension):
         # ----------------------------------------------------------------------
         # Create new group layer
         parentGroupLayer = document.createGroupLayer(parseLayerName(self.__outputOptions['layerGroupName'], ''))
+        originalLayer.parentNode().addChildNode(parentGroupLayer, originalLayer)
 
         self.progressNext(pProgress)
 
@@ -2623,7 +2624,6 @@ class Newspaper(Extension):
                 currentProcessedLayer.setName(parseLayerName(self.__outputOptions['layerColorName'], layer['color']))
 
 
-        originalLayer.parentNode().addChildNode(parentGroupLayer, originalLayer)
         self.progressNext(pProgress)
 
         if self.__outputOptions['originalLayerAction'] == ORIGINAL_LAYER_KEEPVISIBLE:
