@@ -1,20 +1,10 @@
-#-----------------------------------------------------------------------------
-# Newspaper
-# Copyright (C) 2019 - Grum999
 # -----------------------------------------------------------------------------
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+# Newspaper
+# Copyright (C) 2019-2002 - Grum999
+# -----------------------------------------------------------------------------
+# SPDX-License-Identifier: GPL-3.0-or-later
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.
-# If not, see https://www.gnu.org/licenses/
+# https://spdx.org/licenses/GPL-3.0-or-later.html
 # -----------------------------------------------------------------------------
 # A Krita plugin designed to apply a "newspaper" style to a layer
 # . Monochrome
@@ -123,7 +113,7 @@ PLUGIN_DIALOG_TITLE = "{0} - {1}".format('Newspaper', PLUGIN_VERSION)
 
 # Define DialogBox types
 DBOX_INFO = 'i'
-DBOX_WARNING ='w'
+DBOX_WARNING = 'w'
 
 
 # Define Output modes
@@ -195,552 +185,553 @@ OUTPUT_PREDEF_VALUES = {
 
 # note: same processing base than "Channels To Layers" plugin
 OUTPUT_MODE_NFO = {
-    (OUTPUT_MODE_MONO+'0') : {
-        'description' : 'Convert image to monochrome halftone',
-        'groupLayerName' : 'Newspaper (Monochrome)',
-        'layers' : [
+    (OUTPUT_MODE_MONO+'0'): {
+        'description': 'Convert image to monochrome halftone',
+        'groupLayerName': 'Newspaper (Monochrome)',
+        'layers': [
                     {
-                        'color' : 'Mono',
+                        'color': 'Mono',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=0'
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=0'
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     }
                 ]
     },
-    (OUTPUT_MODE_MONO+'1') : {
-        'description' : 'Convert image to monochrome halftone',
-        'groupLayerName' : 'Newspaper (Monochrome)',
-        'layers' : [
+    (OUTPUT_MODE_MONO+'1'): {
+        'description': 'Convert image to monochrome halftone',
+        'groupLayerName': 'Newspaper (Monochrome)',
+        'layers': [
                     {
-                        'color' : 'Mono',
+                        'color': 'Mono',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=1'
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=1'
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     }
                 ]
     },
-    (OUTPUT_MODE_MONO+'2') : {
-        'description' : 'Convert image to monochrome halftone',
-        'groupLayerName' : 'Newspaper (Monochrome)',
-        'layers' : [
+    (OUTPUT_MODE_MONO+'2'): {
+        'description': 'Convert image to monochrome halftone',
+        'groupLayerName': 'Newspaper (Monochrome)',
+        'layers': [
                     {
-                        'color' : 'Mono',
+                        'color': 'Mono',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=2'
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=2'
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     }
                 ]
     },
-    (OUTPUT_MODE_MONO+'3') : {
-        'description' : 'Convert image to monochrome halftone',
-        'groupLayerName' : 'Newspaper (Monochrome)',
-        'layers' : [
+    (OUTPUT_MODE_MONO+'3'): {
+        'description': 'Convert image to monochrome halftone',
+        'groupLayerName': 'Newspaper (Monochrome)',
+        'layers': [
                     {
-                        'color' : 'Mono',
+                        'color': 'Mono',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=3'
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=3'
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     }
                 ]
     },
-    (OUTPUT_MODE_MONO+'4') : {
-        'description' : 'Convert image to monochrome halftone',
-        'groupLayerName' : 'Newspaper (Monochrome)',
-        'layers' : [
+    (OUTPUT_MODE_MONO+'4'): {
+        'description': 'Convert image to monochrome halftone',
+        'groupLayerName': 'Newspaper (Monochrome)',
+        'layers': [
                     {
-                        'color' : 'Mono',
+                        'color': 'Mono',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     }
                 ]
     },
-    (OUTPUT_MODE_MONO+'5') : {
-        'description' : 'Convert image to monochrome halftone',
-        'groupLayerName' : 'Newspaper (Monochrome)',
-        'layers' : [
+    (OUTPUT_MODE_MONO+'5'): {
+        'description': 'Convert image to monochrome halftone',
+        'groupLayerName': 'Newspaper (Monochrome)',
+        'layers': [
                     {
-                        'color' : 'Mono',
+                        'color': 'Mono',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=5'
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=5'
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     }
                 ]
     },
 
-    OUTPUT_MODE_CMY : {
-        'description' : 'Decompose image a into 3 primary colors (CMY) and apply halftone. The black value is obtained as a pure coombination of Cyan, Magenta and Yellow',
-        'groupLayerName' : 'Newspaper (CMY)',
-        'layers' : [
+    OUTPUT_MODE_CMY: {
+        'description': 'Decompose image a into 3 primary colors (CMY) and apply halftone. The black value is obtained as a pure coombination of Cyan, Magenta and Yellow',
+        'groupLayerName': 'Newspaper (CMY)',
+        'layers': [
                     {
-                        'color' : 'Y',
+                        'color': 'Y',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.yellow)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.yellow)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     },
                     {
-                        'color' : 'M',
+                        'color': 'M',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.magenta)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.magenta)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     },
                     {
-                        'color' : 'C',
+                        'color': 'C',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.cyan)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.cyan)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     }
                 ]
     },
-    OUTPUT_MODE_CMYK : {
-        'description' : 'Decompose image a into four color CMYK halftone, as used in color printing (optmised for pictures)',
-        'groupLayerName' : 'Newspaper (CMYK)',
-        'layers' : [
+    OUTPUT_MODE_CMYK: {
+        'description': 'Decompose image a into four color CMYK halftone, as used in color printing (optmised for pictures)',
+        'groupLayerName': 'Newspaper (CMYK)',
+        'layers': [
                     {
-                        'color' : 'K',
+                        'color': 'K',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=5'  # desaturate method = max
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=5'  # desaturate method = max
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     },
                     {
-                        'color' : 'Y',
+                        'color': 'Y',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.yellow)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.yellow)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@K'
+                                    'action': 'duplicate',
+                                    'value': '@K'
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'divide'
+                                    'action': 'blending mode',
+                                    'value': 'divide'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     },
                     {
-                        'color' : 'M',
+                        'color': 'M',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.magenta)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.magenta)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@K'
+                                    'action': 'duplicate',
+                                    'value': '@K'
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'divide'
+                                    'action': 'blending mode',
+                                    'value': 'divide'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     },
                     {
-                        'color' : 'C',
+                        'color': 'C',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.cyan)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.cyan)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@K'
+                                    'action': 'duplicate',
+                                    'value': '@K'
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'divide'
+                                    'action': 'blending mode',
+                                    'value': 'divide'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     }
                 ]
     },
-    OUTPUT_MODE_CMYrK : {
-        'description' : 'Decompose image a into 4 colors (CMYK) and apply halftone. The <a href="https://en.wikipedia.org/wiki/Rich_black">Registration Black</a> value is obtained as a coombination of Cyan, Magenta and Yellow with additional black',
-        'groupLayerName' : 'Newspaper (CMY+rK)',
-        'layers' : [
+    OUTPUT_MODE_CMYrK: {
+        'description': 'Decompose image a into 4 colors (CMYK) and apply halftone. The <a href="https://en.wikipedia.org/wiki/Rich_black">Registration Black</a>'
+                       'value is obtained as a coombination of Cyan, Magenta and Yellow with additional black',
+        'groupLayerName': 'Newspaper (CMY+rK)',
+        'layers': [
                     {
-                        'color' : 'K',
+                        'color': 'K',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=5'  # desaturate method = max
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=5'  # desaturate method = max
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     },
                     {
-                        'color' : 'Y',
+                        'color': 'Y',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.yellow)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.yellow)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     },
                     {
-                        'color' : 'M',
+                        'color': 'M',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.magenta)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.magenta)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     },
                     {
-                        'color' : 'C',
+                        'color': 'C',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.cyan)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.cyan)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     }
@@ -748,181 +739,181 @@ OUTPUT_MODE_NFO = {
     },
 
     OUTPUT_MODE_CMYpK1: {
-        'description' : 'Decompose image a into four color CMYK halftone (optmised for comics style pictures, method #1)',
-        'groupLayerName' : 'Newspaper (CMY+K #1)',
-        'layers' : [
+        'description': 'Decompose image a into four color CMYK halftone (optmised for comics style pictures, method #1)',
+        'groupLayerName': 'Newspaper (CMY+K #1)',
+        'layers': [
                     {
-                        'color' : 'KT',
+                        'color': 'KT',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=5'  # desaturate method = max
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=5'  # desaturate method = max
                                 }
                             ]
                     },
                     {
-                        'color' : 'K',
+                        'color': 'K',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@KT'
+                                    'action': 'duplicate',
+                                    'value': '@KT'
                                 }
                             ]
                     },
                     {
-                        'color' : 'Y',
+                        'color': 'Y',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.yellow)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.yellow)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@KT'
+                                    'action': 'duplicate',
+                                    'value': '@KT'
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'divide'
+                                    'action': 'blending mode',
+                                    'value': 'divide'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     },
                     {
-                        'color' : 'M',
+                        'color': 'M',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.magenta)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.magenta)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@KT'
+                                    'action': 'duplicate',
+                                    'value': '@KT'
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'divide'
+                                    'action': 'blending mode',
+                                    'value': 'divide'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     },
                     {
-                        'color' : 'C',
+                        'color': 'C',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.cyan)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.cyan)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@KT'
+                                    'action': 'duplicate',
+                                    'value': '@KT'
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'divide'
+                                    'action': 'blending mode',
+                                    'value': 'divide'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     },
                     {
-                        'color' : 'KT',
+                        'color': 'KT',
                         'process': [
                                 {
-                                    'action' : 'remove',
-                                    'value' : None
+                                    'action': 'remove',
+                                    'value': None
                                 }
                             ]
                     },
@@ -930,245 +921,245 @@ OUTPUT_MODE_NFO = {
                 ]
     },
     OUTPUT_MODE_CMYpK2: {
-        'description' : 'Decompose image a into four color CMYK halftone (optmised for comics style pictures, method #2)',
-        'groupLayerName' : 'Newspaper (CMY+K #2)',
-        'layers' : [
+        'description': 'Decompose image a into four color CMYK halftone (optmised for comics style pictures, method #2)',
+        'groupLayerName': 'Newspaper (CMY+K #2)',
+        'layers': [
                     {
-                        'color' : 'KT',
+                        'color': 'KT',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=5'  # desaturate method = max
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=5'  # desaturate method = max
                                 },
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=5'  # desaturate method = max
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=5'  # desaturate method = max
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 }
                             ]
                     },
                     {
-                        'color' : 'K',
+                        'color': 'K',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@KT'
+                                    'action': 'duplicate',
+                                    'value': '@KT'
                                 }
                             ]
                     },
                     {
-                        'color' : 'Y',
+                        'color': 'Y',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.yellow)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.yellow)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@KT'
+                                    'action': 'duplicate',
+                                    'value': '@KT'
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'divide'
+                                    'action': 'blending mode',
+                                    'value': 'divide'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@KT'
+                                    'action': 'duplicate',
+                                    'value': '@KT'
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'converse'
+                                    'action': 'blending mode',
+                                    'value': 'converse'
                                 },
                                 {
-                                    'action' : 'opacity',
-                                    'value' : 128
+                                    'action': 'opacity',
+                                    'value': 128
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     },
                     {
-                        'color' : 'M',
+                        'color': 'M',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.magenta)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.magenta)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@KT'
+                                    'action': 'duplicate',
+                                    'value': '@KT'
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'divide'
+                                    'action': 'blending mode',
+                                    'value': 'divide'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@KT'
+                                    'action': 'duplicate',
+                                    'value': '@KT'
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'converse'
+                                    'action': 'blending mode',
+                                    'value': 'converse'
                                 },
                                 {
-                                    'action' : 'opacity',
-                                    'value' : 128
+                                    'action': 'opacity',
+                                    'value': 128
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     },
                     {
-                        'color' : 'C',
+                        'color': 'C',
                         'process': [
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@original'
+                                    'action': 'duplicate',
+                                    'value': '@original'
                                 },
                                 {
-                                    'action' : 'new',
-                                    'value' : {
-                                                'type' : 'filllayer',
-                                                'color' :  QColor(Qt.cyan)
+                                    'action': 'new',
+                                    'value': {
+                                                'type': 'filllayer',
+                                                'color':  QColor(Qt.cyan)
                                             }
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'add'
+                                    'action': 'blending mode',
+                                    'value': 'add'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@KT'
+                                    'action': 'duplicate',
+                                    'value': '@KT'
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'divide'
+                                    'action': 'blending mode',
+                                    'value': 'divide'
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'duplicate',
-                                    'value' : '@KT'
+                                    'action': 'duplicate',
+                                    'value': '@KT'
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'converse'
+                                    'action': 'blending mode',
+                                    'value': 'converse'
                                 },
                                 {
-                                    'action' : 'opacity',
-                                    'value' : 128
+                                    'action': 'opacity',
+                                    'value': 128
                                 },
                                 {
-                                    'action' : 'merge down',
-                                    'value' : None
+                                    'action': 'merge down',
+                                    'value': None
                                 },
                                 {
-                                    'action' : 'blending mode',
-                                    'value' : 'multiply'
+                                    'action': 'blending mode',
+                                    'value': 'multiply'
                                 },
                                 {
-                                    'action' : 'filter',
-                                    'value' : 'name=desaturate;type=4'  # desaturate method = min
+                                    'action': 'filter',
+                                    'value': 'name=desaturate;type=4'  # desaturate method = min
                                 },
                                 {
-                                    'action' : 'newspaper',
-                                    'value' : None                      # automatically use right configuration
+                                    'action': 'newspaper',
+                                    'value': None                      # automatically use right configuration
                                 }
                             ]
                     },
                     {
-                        'color' : 'KT',
+                        'color': 'KT',
                         'process': [
                                 {
-                                    'action' : 'remove',
-                                    'value' : None
+                                    'action': 'remove',
+                                    'value': None
                                 }
                             ]
                     },
@@ -1178,34 +1169,34 @@ OUTPUT_MODE_NFO = {
 }
 
 TRANSLATIONS_DICT = {
-    'colorDepth' : {
-        'U8' : '8bits',
-        'U16' : '16bits',
-        'F16' : '16bits floating point',
-        'F32' : '32bits floating point'
+    'colorDepth': {
+        'U8': '8bits',
+        'U16': '16bits',
+        'F16': '16bits floating point',
+        'F32': '32bits floating point'
     },
-    'colorModel' : {
-        'A' : 'Alpha mask',
-        'RGBA' : 'RGB with alpha channel',
-        'XYZA' : 'XYZ with alpha channel',
-        'LABA' : 'LAB with alpha channel',
-        'CMYKA' : 'CMYK with alpha channel',
-        'GRAYA' : 'Gray with alpha channel',
-        'YCbCrA' : 'YCbCr with alpha channel'
+    'colorModel': {
+        'A': 'Alpha mask',
+        'RGBA': 'RGB with alpha channel',
+        'XYZA': 'XYZ with alpha channel',
+        'LABA': 'LAB with alpha channel',
+        'CMYKA': 'CMYK with alpha channel',
+        'GRAYA': 'Gray with alpha channel',
+        'YCbCrA': 'YCbCr with alpha channel'
     },
-    'layerType' : {
-        'paintlayer' : 'Paint layer',
-        'grouplayer' : 'Group layer',
-        'filelayer' : 'File layer',
-        'filterlayer' : 'Filter layer',
-        'filllayer' : 'Fill layer',
-        'clonelayer' : 'Clone layer',
-        'vectorlayer' : 'Vector layer',
-        'transparencymask' : 'Transparency mask',
-        'filtermask' : 'Filter mask',
+    'layerType': {
+        'paintlayer': 'Paint layer',
+        'grouplayer': 'Group layer',
+        'filelayer': 'File layer',
+        'filterlayer': 'Filter layer',
+        'filllayer': 'Fill layer',
+        'clonelayer': 'Clone layer',
+        'vectorlayer': 'Vector layer',
+        'transparencymask': 'Transparency mask',
+        'filtermask': 'Filter mask',
         'transformmask': 'Transform mask',
         'selectionmask': 'Selection mask',
-        'colorizemask' : 'Colorize mask'
+        'colorizemask': 'Colorize mask'
     }
 }
 
@@ -1263,11 +1254,10 @@ class Newspaper(Extension):
         super().__init__(parent)
         self.parent = parent
 
-
     def createCheckerBoard(self):
-        tmpPixmap = QPixmap(32,32)
-        tmpPixmap.fill(QColor(255,255,255))
-        brush = QBrush(QColor(220,220,220))
+        tmpPixmap = QPixmap(32, 32)
+        tmpPixmap.fill(QColor(255, 255, 255))
+        brush = QBrush(QColor(220, 220, 220))
 
         canvas = QPainter()
         canvas.begin(tmpPixmap)
@@ -1280,16 +1270,13 @@ class Newspaper(Extension):
 
         self.__checkerBoardBrush = QBrush(tmpPixmap)
 
-
     def setup(self):
         """Is executed at Krita's startup"""
         pass
 
-
     def createActions(self, window):
         action = window.createAction(EXTENSION_ID, PLUGIN_MENU_ENTRY, "tools/scripts")
         action.triggered.connect(self.action_triggered)
-
 
     def dBoxMessage(self, msgType, msg):
         """Simplified function for DialogBox 'OK' message"""
@@ -1306,13 +1293,11 @@ class Newspaper(Extension):
                     msg
                 )
 
-
     def action_triggered(self):
         """Action called when script is executed from Kitra menu"""
         if self.checkCurrentLayer():
             if self.openDialogOptions():
                 self.run()
-
 
     def translateDictKey(self, key, value):
         """Translate key from dictionnary (mostly internal Krita internal values) to human readable values"""
@@ -1323,7 +1308,6 @@ class Newspaper(Extension):
                 returned = i18n(TRANSLATIONS_DICT[key][value])
 
         return returned
-
 
     def checkCurrentLayer(self):
         """Check if current layer is valid
@@ -1350,22 +1334,19 @@ class Newspaper(Extension):
                                                 "\n- Color depth: {4}"
                                                 "\n\n> Action is cancelled".format(self.__sourceLayer.name(),
                                                                                    self.translateDictKey('layerType', self.__sourceLayer.type()),
-                                                                                   self.__sourceLayer.colorModel(), self.translateDictKey('colorModel', self.__sourceLayer.colorModel()),
+                                                                                   self.__sourceLayer.colorModel(),
+                                                                                   self.translateDictKey('colorModel', self.__sourceLayer.colorModel()),
                                                                                    self.translateDictKey('colorDepth', self.__sourceLayer.colorDepth())
-                                            )
-                            ))
+                                                                                   )
+                                                ))
             return False
-
         return True
-
 
     def openDialogOptions(self):
         """Open dialog box to let user define channel extraction options"""
-
-        self.inSizeEvent=False
+        self.inSizeEvent = False
         previewBaSrc = QByteArray()
-        inInit=True
-
+        inInit = True
 
         # ----------------------------------------------------------------------
         def uiSetBtColor(button, color):
@@ -1396,33 +1377,32 @@ class Newspaper(Extension):
             if self.__outputOptions['outputMode'] == OUTPUT_MODE_MONO:
                 currentMode = 'mono'
 
-
-            # build preview model if needed
+            # build preview model if needed
             if self.__pixmapStylePreviewBlack[currentMode] is None:
-                gradient = QLinearGradient(QPointF(10, 0), QPointF(outputWidth - 10, outputHeight));
-                gradient.setColorAt(0, Qt.black);
-                gradient.setColorAt(1, Qt.white);
+                gradient = QLinearGradient(QPointF(10, 0), QPointF(outputWidth - 10, outputHeight))
+                gradient.setColorAt(0, Qt.black)
+                gradient.setColorAt(1, Qt.white)
 
-                self.__pixmapStylePreviewBlack[currentMode] = QPixmap(outputWidth,outputHeight)
+                self.__pixmapStylePreviewBlack[currentMode] = QPixmap(outputWidth, outputHeight)
 
                 canvas = QPainter()
                 canvas.begin(self.__pixmapStylePreviewBlack[currentMode])
-                canvas.fillRect(QRect(0,0,outputWidth, outputHeight), gradient);
+                canvas.fillRect(QRect(0, 0, outputWidth, outputHeight), gradient)
                 canvas.end()
 
             if self.__pixmapStylePreviewCMYK[currentMode] is None:
-                gradient = QLinearGradient(QPointF(10, 0), QPointF(outputWidth - 10, outputHeight));
-                gradient.setColorAt(0, Qt.black);
-                gradient.setColorAt(0.125, Qt.white);
-                gradient.setColorAt(0.25, Qt.red);
-                gradient.setColorAt(0.375, Qt.yellow);
-                gradient.setColorAt(0.5, Qt.green);
-                gradient.setColorAt(0.625, Qt.cyan);
-                gradient.setColorAt(0.75, Qt.blue);
-                gradient.setColorAt(0.875, Qt.magenta);
-                gradient.setColorAt(1, Qt.red);
+                gradient = QLinearGradient(QPointF(10, 0), QPointF(outputWidth - 10, outputHeight))
+                gradient.setColorAt(0, Qt.black)
+                gradient.setColorAt(0.125, Qt.white)
+                gradient.setColorAt(0.25, Qt.red)
+                gradient.setColorAt(0.375, Qt.yellow)
+                gradient.setColorAt(0.5, Qt.green)
+                gradient.setColorAt(0.625, Qt.cyan)
+                gradient.setColorAt(0.75, Qt.blue)
+                gradient.setColorAt(0.875, Qt.magenta)
+                gradient.setColorAt(1, Qt.red)
 
-                self.__pixmapStylePreviewCMYK[currentMode] = QPixmap(outputWidth,outputHeight)
+                self.__pixmapStylePreviewCMYK[currentMode] = QPixmap(outputWidth, outputHeight)
 
                 path = QPainterPath(QPointF(0, outputHeight/2))
                 path.cubicTo(QPointF(outputWidth * 0.125, outputHeight * 0.25), QPointF(outputWidth * 0.375, outputHeight * 0.25), QPointF(outputWidth/2, outputHeight/2))
@@ -1433,7 +1413,7 @@ class Newspaper(Extension):
 
                 canvas = QPainter()
                 canvas.begin(self.__pixmapStylePreviewCMYK[currentMode])
-                canvas.fillRect(QRectF(0,0,outputWidth, outputHeight), gradient);
+                canvas.fillRect(QRectF(0, 0, outputWidth, outputHeight), gradient)
                 canvas.setBrush(QBrush(QColor(Qt.black), Qt.SolidPattern))
                 canvas.setPen(QPen(Qt.NoPen))
                 canvas.setRenderHint(QPainter.Antialiasing, True)
@@ -1441,13 +1421,10 @@ class Newspaper(Extension):
 
                 canvas.end()
 
-
-
             if self.__stylePreviewModel[currentMode] == 'black':
                 srcPixmap = self.__pixmapStylePreviewBlack[currentMode]
             else:
                 srcPixmap = self.__pixmapStylePreviewCMYK[currentMode]
-
 
             # create a temporary document to work; work on visible part of preview only
             tmpDocument = Application.createDocument(outputWidth, outputHeight, "tmp", "RGBA", "U8", "", self.__sourceDocument.resolution())
@@ -1469,12 +1446,13 @@ class Newspaper(Extension):
                 canvas.drawPixmap(0, 0, EKritaNode.toQPixmap(tmpGroupLayer))
                 canvas.end()
             else:
-                #self.__pixmapStylePreviewApplied = QPixmap.fromImage( QImage(tmpGroupLayer.projectionPixelData(0, 0, outputWidth, outputHeight), outputWidth, outputHeight, QImage.Format_ARGB32))
+                # self.__pixmapStylePreviewApplied = QPixmap.fromImage(QImage(tmpGroupLayer.projectionPixelData(0, 0, outputWidth, outputHeight),
+                #                                                             outputWidth, outputHeight, QImage.Format_ARGB32)
+                #                                                     )
                 self.__pixmapStylePreviewApplied = EKritaNode.toQPixmap(tmpGroupLayer)
 
             dlgMain.btStylePreview.setIcon(QIcon(self.__pixmapStylePreviewApplied))
             dlgMain.btStylePreview.setIconSize(iconSizeStylePreview)
-
 
             tmpDocument.close()
 
@@ -1511,15 +1489,16 @@ class Newspaper(Extension):
                                                                    viewPort.top(),
                                                                    viewPort.width(),
                                                                    viewPort.height()),
-                                                                   0, 0,
-                                                                   viewPort.width(),
-                                                                   viewPort.height())
+                                      0,
+                                      0,
+                                      viewPort.width(),
+                                      viewPort.height())
 
                 # execute process
                 tmpGroupLayer = self.process(tmpDocument, tmpLayer, dlgMain.pbProgress)
 
-                #tmpLayer.setVisible(False)
-                #tmpGroupLayer.setVisible(True)
+                # tmpLayer.setVisible(False)
+                # tmpGroupLayer.setVisible(True)
                 tmpDocument.refreshProjection()
 
                 # prepare final rendered image
@@ -1589,7 +1568,7 @@ class Newspaper(Extension):
             if self.__outputOptions['outputMode'] == OUTPUT_MODE_MONO:
                 currentMode = 'mono'
 
-            # switch model for color mode
+            # switch model for color mode
             if self.__stylePreviewModel[currentMode] == 'black':
                 self.__stylePreviewModel[currentMode] = 'cmyk'
                 dlgMain.btStylePreview.setIcon(QIcon(self.__pixmapStylePreviewCMYK[currentMode]))
@@ -1706,12 +1685,9 @@ class Newspaper(Extension):
         def leNewLayerColorName_Changed(value):
             self.__outputOptions['layerColorName'] = value
 
-
-
         @pyqtSlot('QString')
         def btRefresh_Clicked(checked):
             uiBuildPreview()
-
 
         def onDspbxSizeChanged(value):
             if self.inSizeEvent:
@@ -1723,14 +1699,12 @@ class Newspaper(Extension):
             uiBuildStylePreview()
             inSizeEvent = False
 
-
         def onHsldSizeChanged(value):
             if self.inSizeEvent:
                 return
             inSizeEvent = True
             dlgMain.dspbxSize.setValue(value / 100)
             inSizeEvent = False
-
 
         def onDialogShown():
             """Called when dialog is shown"""
@@ -1745,8 +1719,6 @@ class Newspaper(Extension):
 
         dlgMain.setWindowTitle(PLUGIN_DIALOG_TITLE)
         dlgMain.dialogShown.connect(onDialogShown)
-
-
 
         # ......................................................................
         # Define values & connectors
@@ -1768,7 +1740,6 @@ class Newspaper(Extension):
         dlgMain.btStylePreview.clicked.connect(btStylePreview_Clicked)
         dlgMain.setEventCallback(dlgMain.btStylePreview, btStylePreviewEvent)
 
-
         dlgMain.cmbDotStyle.addItems([
                 OUTPUT_DOT_STYLE_CIRCLE,
                 OUTPUT_DOT_STYLE_DIAMOND,
@@ -1783,13 +1754,11 @@ class Newspaper(Extension):
         dlgMain.dspbxSize.valueChanged[float].connect(lambda v: onDspbxSizeChanged(v))
         dlgMain.hsldSize.setValue(self.__outputOptions['outputSize'] * 100)
 
-
         dlgMain.hsldAdjustment.setValue(self.__outputOptions['outputAdjustment'])
         dlgMain.hsldAdjustment.valueChanged.connect(hsldAdjustment_Changed)
 
         dlgMain.hsldSteadiness.setValue(self.__outputOptions['outputSteadiness'])
         dlgMain.hsldSteadiness.valueChanged.connect(hsldSteadiness_Changed)
-
 
         dlgMain.cmbSampling.addItems([
                 OUTPUT_SAMPLING_LOW,
@@ -1807,7 +1776,6 @@ class Newspaper(Extension):
         dlgMain.cmbAntialiasing.setCurrentText(self.__outputOptions['outputAntialasing'])
         dlgMain.cmbAntialiasing.currentTextChanged.connect(cmbAntialiasing_Changed)
 
-
         dlgMain.cmbMonoDesaturateMode.addItems([
             OUTPUT_MONO_DESMODE_LIGHTNESS,
             OUTPUT_MONO_DESMODE_LUMINOSITY709,
@@ -1819,10 +1787,8 @@ class Newspaper(Extension):
         dlgMain.cmbMonoDesaturateMode.setCurrentText(self.__outputOptions['outputMonoDesaturateMode'])
         dlgMain.cmbMonoDesaturateMode.currentTextChanged.connect(cmbMonoDesaturateMode_Changed)
 
-
         dlgMain.hsldMonoRotation.setValue(self.__outputOptions['outputMonoRotation'])
         dlgMain.hsldMonoRotation.valueChanged.connect(hsldMonoRotation_Changed)
-
 
         dlgMain.btMonoFgColor.setText("")
         uiSetBtColor(dlgMain.btMonoFgColor, self.__outputOptions['outputMonoFg'])
@@ -1843,7 +1809,6 @@ class Newspaper(Extension):
         dlgMain.cmb4CScreenAngle.setCurrentText(self.__outputOptions['output4CScreenAngle'])
         dlgMain.cmb4CScreenAngle.currentTextChanged.connect(cmb4CScreenAngle_Changed)
 
-
         dlgMain.cmbOriginalLayer.addItems([
             ORIGINAL_LAYER_KEEPUNCHANGED,
             ORIGINAL_LAYER_KEEPVISIBLE,
@@ -1858,20 +1823,15 @@ class Newspaper(Extension):
         dlgMain.leNewLayerColorName.setText(self.__outputOptions['layerColorName'])
         dlgMain.leNewLayerColorName.textChanged.connect(leNewLayerColorName_Changed)
 
-
         dlgMain.lblPreview.resize(self.__sourceDocument.width(), self.__sourceDocument.height())
         dlgMain.scraWidgetContentsPreview.resize(self.__sourceDocument.width(), self.__sourceDocument.height())
         uiBuildPreview()
-
-
-
 
         dlgMain.btRefresh.clicked.connect(btRefresh_Clicked)
 
         dlgMain.pbProgress.setVisible(False)
 
         dlgMain.verticalLayout_options.addStretch()
-
 
         dlgMain.dbbxOkCancel.accepted.connect(dlgMain.accept)
         dlgMain.dbbxOkCancel.rejected.connect(dlgMain.reject)
@@ -1881,14 +1841,12 @@ class Newspaper(Extension):
 
         return returned
 
-
     def progressNext(self, pProgress):
         """Update progress bar"""
         if pProgress is not None:
-            stepCurrent=pProgress.value()+1
+            stepCurrent = pProgress.value()+1
             pProgress.setValue(stepCurrent)
             QApplication.instance().processEvents()
-
 
     def run(self):
         """Run process for current layer"""
@@ -1903,7 +1861,6 @@ class Newspaper(Extension):
 
         pdlgProgress.close()
 
-
     def process(self, pDocument, pOriginalLayer, pProgress):
         """Process given layer with current options"""
 
@@ -1916,7 +1873,7 @@ class Newspaper(Extension):
 
         def getLayerByName(parent, value):
             """search and return a layer by name, within given parent group"""
-            if parent == None:
+            if parent is None:
                 return document.nodeByName(value)
 
             for layer in parent.childNodes():
@@ -1924,7 +1881,6 @@ class Newspaper(Extension):
                     return layer
 
             return None
-
 
         def duplicateLayer(currentProcessedLayer, value):
             """Duplicate layer from given name
@@ -1935,7 +1891,7 @@ class Newspaper(Extension):
             srcLayer = None
             srcName = re.match("^@(.*)", value)
 
-            if not srcName is None:
+            if srcName is not None:
                 # reference to a specific layer
                 if srcName[1] == 'original':
                     # original layer currently processed
@@ -1947,11 +1903,10 @@ class Newspaper(Extension):
                 # a layer with a fixed name
                 srcLayer = document.nodeByName(parseLayerName(value, ''))
 
-
-            if not srcLayer is None:
+            if srcLayer is not None:
                 newLayer = srcLayer.duplicate()
 
-                self.layerNum+=1
+                self.layerNum += 1
                 newLayer.setName("np-d{0}".format(self.layerNum))
 
                 parentGroupLayer.addChildNode(newLayer, currentProcessedLayer)
@@ -1959,7 +1914,6 @@ class Newspaper(Extension):
                 return newLayer
             else:
                 return None
-
 
         def newLayer(currentProcessedLayer, value):
             """Create a new layer of given type
@@ -1974,15 +1928,15 @@ class Newspaper(Extension):
                 return None
 
             if value['type'] == 'filllayer':
-                infoObject = InfoObject();
+                infoObject = InfoObject()
                 infoObject.setProperty("color", value['color'])
-                selection = Selection();
+                selection = Selection()
                 selection.select(0, 0, document.width(), document.height(), 255)
 
                 newLayer = document.createFillLayer(value['color'].name(), "color", infoObject, selection)
 
             if newLayer:
-                self.layerNum+=1
+                self.layerNum += 1
                 newLayer.setName("np-n{0}".format(self.layerNum))
 
                 parentGroupLayer.addChildNode(newLayer, currentProcessedLayer)
@@ -1995,13 +1949,11 @@ class Newspaper(Extension):
             else:
                 return None
 
-
         def removeLayer(currentProcessedLayer, value):
             """Remove layer"""
             currentProcessedLayer.remove()
 
             return None
-
 
         def mergeDown(currentProcessedLayer, value):
             """Merge current layer with layer below"""
@@ -2023,7 +1975,6 @@ class Newspaper(Extension):
             currentProcessedLayer.cropNode(0, 0, document.width(), document.height())
             return currentProcessedLayer
 
-
         def applyBlendingMode(currentProcessedLayer, value):
             """Set blending mode for current layer"""
             if currentProcessedLayer is None or value is None or value == '':
@@ -2032,7 +1983,6 @@ class Newspaper(Extension):
             currentProcessedLayer.setBlendingMode(value)
             return True
 
-
         def applyOpacity(currentProcessedLayer, value):
             """Set opacity current layer"""
             if currentProcessedLayer is None or value is None or value == '':
@@ -2040,7 +1990,6 @@ class Newspaper(Extension):
 
             currentProcessedLayer.setOpacity(value)
             return True
-
 
         def applyFilter(currentProcessedLayer, value):
             """Apply filter to layer"""
@@ -2058,14 +2007,13 @@ class Newspaper(Extension):
             for parameter in value.split(';'):
                 parameterName = re.match("^([^=]+)=(.*)", parameter)
 
-                if not parameterName is None and parameterName != 'name':
-                    filterConfiguration.setProperty(parameterName.group(1), parameterName.group(2).replace('\;',';'))
+                if parameterName is not None and parameterName != 'name':
+                    filterConfiguration.setProperty(parameterName.group(1), parameterName.group(2).replace(r'\;', ';'))
 
             filter.setConfiguration(filterConfiguration)
             filter.apply(currentProcessedLayer, 0, 0, document.width(), document.height())
 
             return currentProcessedLayer
-
 
         def applyNewspaper(currentProcessedLayer, value, color):
             """Apply newspaper style to layer"""
@@ -2084,13 +2032,12 @@ class Newspaper(Extension):
                 return (xt * matrix[0][0] + yt * matrix[0][1] + matrix[0][2],
                         xt * matrix[1][0] + yt * matrix[1][1] + matrix[1][2])
 
-            #if not pProgress is None:
+            # if not pProgress is None:
             #    print(f"Newspaper execution duration[{color}]: start")
             #    startTime = time.time()
 
-
             # define configuration
-            # do not use hashtable (slower access than a variable)
+            # do not use hashtable (slower access than a variable)
             configBrush = QBrush(Qt.NoBrush)
             configPen = QPen(Qt.NoPen)
             configBgColor = QColor(Qt.white)
@@ -2102,31 +2049,31 @@ class Newspaper(Extension):
             configHeight = currentProcessedLayer.bounds().height()
             configSampling = True
             configSamplingRange = []
-            configDrawMode = 0 # Circle
+            configDrawMode = 0  # Circle
 
             if self.__outputOptions['outputMode'] == OUTPUT_MODE_MONO:
                 # In Monochrome mode, set background color as defined
                 if self.__outputOptions['outputMonoBgTransparent']:
-                    configBgColor=QColor(Qt.transparent)
+                    configBgColor = QColor(Qt.transparent)
                 else:
-                    configBgColor=self.__outputOptions['outputMonoBg']
+                    configBgColor = self.__outputOptions['outputMonoBg']
 
                 if self.__outputOptions['outputDotStyle'] == OUTPUT_DOT_STYLE_LINEFLAT:
                     # in line mode, use pen
-                    configPen=QPen(self.__outputOptions['outputMonoFg'])
+                    configPen = QPen(self.__outputOptions['outputMonoFg'])
                     configPen.setCapStyle(Qt.FlatCap)
                     configPen.setJoinStyle(Qt.MiterJoin)
                 elif self.__outputOptions['outputDotStyle'] == OUTPUT_DOT_STYLE_LINEROUND:
                     # in line mode, use pen
-                    configPen=QPen(self.__outputOptions['outputMonoFg'])
+                    configPen = QPen(self.__outputOptions['outputMonoFg'])
                     configPen.setCapStyle(Qt.RoundCap)
                     configPen.setJoinStyle(Qt.MiterJoin)
                 else:
                     # otherwise use brush
-                    configBrush=QBrush(self.__outputOptions['outputMonoFg'], Qt.SolidPattern)
+                    configBrush = QBrush(self.__outputOptions['outputMonoFg'], Qt.SolidPattern)
 
                 if self.__outputOptions['outputMonoRotation'] != 90:
-                    # when rotation = 90, do same process than rotation = 0
+                    # when rotation = 90, do same process than rotation = 0
                     configRotation = radians(self.__outputOptions['outputMonoRotation'])
             else:
                 appliedColor = QColor(Qt.black)
@@ -2137,22 +2084,21 @@ class Newspaper(Extension):
                 configRotationD = -OUTPUT_PREDEF_VALUES[self.__outputOptions['output4CScreenAngle']][color]
                 configRotation = radians(OUTPUT_PREDEF_VALUES[self.__outputOptions['output4CScreenAngle']][color])
 
-
                 # in CMYK mode, set white background color
                 if self.__outputOptions['outputDotStyle'] == OUTPUT_DOT_STYLE_LINEFLAT:
                     # in line mode, use pen
-                    configPen=QPen(appliedColor)
+                    configPen = QPen(appliedColor)
                     configPen.setCapStyle(Qt.FlatCap)
                     configPen.setJoinStyle(Qt.MiterJoin)
                 elif self.__outputOptions['outputDotStyle'] == OUTPUT_DOT_STYLE_LINEROUND:
                     # in line mode, use pen
-                    configPen=QPen(appliedColor)
+                    configPen = QPen(appliedColor)
                     configPen.setCapStyle(Qt.FlatCap)
                     configPen.setJoinStyle(Qt.MiterJoin)
                 else:
-                    configBrush=QBrush(appliedColor, Qt.SolidPattern)
+                    configBrush = QBrush(appliedColor, Qt.SolidPattern)
 
-            # use a number, faster to check than a string
+            # use a number, faster to check than a string
             if self.__outputOptions['outputDotStyle'] == OUTPUT_DOT_STYLE_DIAMOND:
                 configDrawMode = 1
             elif self.__outputOptions['outputDotStyle'] == OUTPUT_DOT_STYLE_SQUARE:
@@ -2162,15 +2108,13 @@ class Newspaper(Extension):
             elif self.__outputOptions['outputDotStyle'] == OUTPUT_DOT_STYLE_LINEROUND:
                 configDrawMode = 4
 
-
-
             # Calculate dot geometry
             dotSize = self.__outputOptions['outputSize']
             dotAdjustmentValue = dotSize * self.__outputOptions['outputAdjustment']/100
             dotOffset = dotSize + dotAdjustmentValue
 
-            dotiSize=int(dotSize)
-            dotHSize = dotSize  / 2
+            dotiSize = int(dotSize)
+            dotHSize = dotSize / 2
             dotiHSize = int(dotHSize)
 
             dotFullSizeFactor = 1
@@ -2201,7 +2145,7 @@ class Newspaper(Extension):
                 #         **+-----+**
                 #           *******
                 #
-                dotFullSizeFactor = sqrt( 2*dotHSize*dotHSize )
+                dotFullSizeFactor = sqrt(2*dotHSize*dotHSize)
             elif self.__outputOptions['outputDotStyle'] == OUTPUT_DOT_STYLE_DIAMOND:
                 # Calculate factor for rendering 'diamoond dots' that fill 100% of cell
                 # These are calculated now to improve calculation performances
@@ -2235,19 +2179,17 @@ class Newspaper(Extension):
                 #
                 dotFullSizeFactor = 1.5 * dotHSize
 
-
             # Calculate ranges for on each pixel processing
             # (made now to avoid recalculation on each loop)
             if self.__outputOptions['outputSampling'] == OUTPUT_SAMPLING_HIGH:
-                # sample made on ALL pixel
+                # sample made on ALL pixel
                 configSamplingRange = [v for v in range(0, dotiSize, 1)]
             elif self.__outputOptions['outputSampling'] == OUTPUT_SAMPLING_MEDIUM:
-                # sample made on one pixel on two
+                # sample made on one pixel on two
                 configSamplingRange = [v for v in range(0, dotiSize, 2)]
-            else: # (self.__outputOptions['outputSampling'] == OUTPUT_SAMPLING_LOW:
-                # sample made on current pixel only
+            else:  # (self.__outputOptions['outputSampling'] == OUTPUT_SAMPLING_LOW:
+                # sample made on current pixel only
                 configSampling = False
-
 
             # calculate bounds
             if configRotation == 0 or configRotation == 90:
@@ -2260,13 +2202,13 @@ class Newspaper(Extension):
             else:
                 # When a rotation is applied, we need to determinate new bounds
                 # Original bounds
-                #   (0,0)   => origin coordinates
-                #   (w,h)   => bottom/left coordinates
-                #   (cx,cy) => rotation center (w/2, h/2)
+                #   (0, 0)   => origin coordinates
+                #   (w, h)   => bottom/left coordinates
+                #   (cx, cy) => rotation center (w/2, h/2)
                 #
                 # Intermediate calculations
-                #   (0',0') => rotated origin coordinates
-                #   (w',h') => rotated bottom/left coordinates
+                #   (0', 0') => rotated origin coordinates
+                #   (w', h') => rotated bottom/left coordinates
                 #
                 #       (left,top)       (w",0")       (right,top)
                 #            *              +                *
@@ -2300,7 +2242,6 @@ class Newspaper(Extension):
                 rotCos = cos(-configRotation)
                 rotSin = sin(-configRotation)
 
-
                 xMiddle = configWidth / 2
                 yMiddle = configHeight / 2
 
@@ -2323,7 +2264,6 @@ class Newspaper(Extension):
             xPositions = [(xLeft + dotOffset * v) for v in range(ceil((xRight - xLeft) / dotOffset))]
             yPositions = [(yTop + dotOffset * v) for v in range(ceil((yBottom - yTop) / dotOffset))]
 
-
             # Source is used to determinate pixels values
             imgSrc = EKritaNode.toQImage(currentProcessedLayer)
             srcPixmap = QPixmap.fromImage(imgSrc)
@@ -2345,10 +2285,8 @@ class Newspaper(Extension):
             currentStepnumber = 0
             stepInc = len(yPositions)
 
-
             mWidth = configWidth + dotiSize
             mHeight = configHeight + dotiSize
-
 
             # working on bits() is faster than working on pixels
             # pixel is stored on 4bytes:
@@ -2358,7 +2296,7 @@ class Newspaper(Extension):
             # Bits[index + 3] = alpha
             imgSrcBits = imgSrc.bits()
             imgSrcBits.setsize(imgSrc.byteCount())
-            imgSrcBitsRowLength = configWidth << 2 # << 2 = *4 but faster
+            imgSrcBitsRowLength = configWidth << 2  # << 2 = *4 but faster
 
             # start processing image
             for x in xPositions:
@@ -2380,10 +2318,10 @@ class Newspaper(Extension):
                          iXSrc < -dotiSize or
                          iYSrc < -dotiSize) or
                         not configSampling and
-                         (iXSrc < 0 or
-                          iYSrc < 0 or
-                          iXSrc >= configWidth or
-                          iYSrc >= configHeight)):
+                        (iXSrc < 0 or
+                         iYSrc < 0 or
+                         iXSrc >= configWidth or
+                         iYSrc >= configHeight)):
                         # completely outside viewport, do not process
                         continue
 
@@ -2409,13 +2347,13 @@ class Newspaper(Extension):
                                 if alpha == 0xFF:
                                     # no alpha, get value
                                     # work on 1byte only (all RGB byte have same value)
-                                    sumPx+=ord(imgSrcBits[imgSrcBitsIndex])
-                                    nbPx+=1
+                                    sumPx += ord(imgSrcBits[imgSrcBitsIndex])
+                                    nbPx += 1
                                 elif alpha > 0:
                                     # alpha, get weighted value
-                                    sumPx+=255 - int((255 - ord(imgSrcBits[imgSrcBitsIndex])) * alpha/255)
-                                    nbPx+=1
-                                # Else
+                                    sumPx += 255 - int((255 - ord(imgSrcBits[imgSrcBitsIndex])) * alpha/255)
+                                    nbPx += 1
+                                # Else
                                 #   fully transparent
                                 #   do nothing
 
@@ -2442,8 +2380,8 @@ class Newspaper(Extension):
                             fRadius = (255 - ord(imgSrcBits[imgSrcBitsIndex])) / 255
                         else:
                             # with transparency, apply alpha weight
-                            #fRadius2 = (255 - (255 - ord(imgSrcBits[imgSrcBitsIndex])) * alpha/255)/255
-                            # factorized calculation
+                            # fRadius2 = (255 - (255 - ord(imgSrcBits[imgSrcBitsIndex])) * alpha/255)/255
+                            # factorized calculation
                             fRadius = (65025 + (ord(imgSrcBits[imgSrcBitsIndex]) - 255) * alpha)/65025
 
                     if dotFullSizeFactor != 1:
@@ -2467,7 +2405,7 @@ class Newspaper(Extension):
                                                       QPointF(fXSrc + fRadiusX, fYSrc),
                                                       QPointF(fXSrc, fYSrc + fRadiusY),
                                                       QPointF(fXSrc - fRadiusX, fYSrc)])
-                                        )
+                                           )
                     elif configDrawMode == 2:
                         # square
                         canvas.fillRect(QRectF(fXSrc - fRadiusX, fYSrc - fRadiusY, fRadiusX, fRadiusY), configBrush)
@@ -2495,8 +2433,8 @@ class Newspaper(Extension):
                         canvas.drawLine(QPointF(0, dotHSize), QPointF(dotSize, dotHSize))
                         canvas.restore()
 
-                if not pProgress is None:
-                    currentStepnumber+=stepInc
+                if pProgress is not None:
+                    currentStepnumber += stepInc
                     if currentStepnumber >= moduloStep:
                         currentStepnumber = 0
                         self.progressNext(pProgress)
@@ -2504,7 +2442,7 @@ class Newspaper(Extension):
             canvas.end()
 
             # apply result to current processed layer
-            EKritaNode.fromQPixmap(currentProcessedLayer, workingPixmap, QPoint(currentProcessedLayer.bounds().left(), currentProcessedLayer.bounds().top()) )
+            EKritaNode.fromQPixmap(currentProcessedLayer, workingPixmap, QPoint(currentProcessedLayer.bounds().left(), currentProcessedLayer.bounds().top()))
 
             if self.__outputOptions['outputAntialasing'] == OUTPUT_ANTIALIASING_SOFT:
                 filter = Application.filter("gaussian blur")
@@ -2515,13 +2453,10 @@ class Newspaper(Extension):
                 filter.setConfiguration(filterConfiguration)
                 filter.apply(currentProcessedLayer, 0, 0, configWidth, configHeight)
 
-            #if not pProgress is None:
+            # if not pProgress is None:
             #    print(f"Newspaper execution duration[{color}]:", time.time() - startTime)
 
-
-
             return currentProcessedLayer
-
 
         def parseLayerName(value, color):
             """Parse layer name"""
@@ -2550,7 +2485,6 @@ class Newspaper(Extension):
 
             return returned
 
-
         if document is None or originalLayer is None:
             # should not occurs, but...
             return
@@ -2558,33 +2492,33 @@ class Newspaper(Extension):
         outputMode = self.__outputOptions['outputMode']
         if outputMode == OUTPUT_MODE_MONO:
             if self.__outputOptions['outputMonoDesaturateMode'] == OUTPUT_MONO_DESMODE_LIGHTNESS:
-                outputMode+='0'
+                outputMode += '0'
             elif self.__outputOptions['outputMonoDesaturateMode'] == OUTPUT_MONO_DESMODE_LUMINOSITY709:
-                outputMode+='1'
+                outputMode += '1'
             elif self.__outputOptions['outputMonoDesaturateMode'] == OUTPUT_MONO_DESMODE_LUMINOSITY601:
-                outputMode+='2'
+                outputMode += '2'
             elif self.__outputOptions['outputMonoDesaturateMode'] == OUTPUT_MONO_DESMODE_AVERAGE:
-                outputMode+='3'
+                outputMode += '3'
             elif self.__outputOptions['outputMonoDesaturateMode'] == OUTPUT_MONO_DESMODE_MINIMUM:
-                outputMode+='4'
+                outputMode += '4'
             elif self.__outputOptions['outputMonoDesaturateMode'] == OUTPUT_MONO_DESMODE_MAXIMUM:
-                outputMode+='5'
+                outputMode += '5'
 
-        if not pProgress is None:
+        if pProgress is not None:
             # determinate number of steps
             stepTotal = 4
             for layer in OUTPUT_MODE_NFO[outputMode]['layers']:
-                stepTotal+=len(layer['process'])
+                stepTotal += len(layer['process'])
                 for process in layer['process']:
                     if process['action'] in ['newspaper', 'uncolorise']:
                         # arbitrary decompose a newspaper action to 20steps
                         # otherwise progress bar seems to be freezed during
                         # process
-                        stepTotal+=20
+                        stepTotal += 20
 
             pProgress.setRange(0, stepTotal)
 
-        if originalLayerIsVisible == False:
+        if originalLayerIsVisible is False:
             originalLayer.setVisible(True)
 
         # ----------------------------------------------------------------------
@@ -2597,7 +2531,7 @@ class Newspaper(Extension):
         currentProcessedLayer = None
 
         for layer in OUTPUT_MODE_NFO[outputMode]['layers']:
-            currentProcessedLayer=getLayerByName(parentGroupLayer, parseLayerName(self.__outputOptions['layerColorName'], layer['color']))
+            currentProcessedLayer = getLayerByName(parentGroupLayer, parseLayerName(self.__outputOptions['layerColorName'], layer['color']))
 
             for process in layer['process']:
                 if process['action'] == 'duplicate':
@@ -2619,10 +2553,9 @@ class Newspaper(Extension):
 
                 self.progressNext(pProgress)
 
-            if not currentProcessedLayer is None:
+            if currentProcessedLayer is not None:
                 # rename currentProcessedLayer
                 currentProcessedLayer.setName(parseLayerName(self.__outputOptions['layerColorName'], layer['color']))
-
 
         self.progressNext(pProgress)
 
@@ -2636,7 +2569,6 @@ class Newspaper(Extension):
             # ORIGINAL_LAYER_KEEPUNCHANGED
             originalLayer.setVisible(originalLayerIsVisible)
 
-
         self.progressNext(pProgress)
 
         document.refreshProjection()
@@ -2645,8 +2577,6 @@ class Newspaper(Extension):
         document.setActiveNode(parentGroupLayer)
 
         return parentGroupLayer
-
-
 
 
 if PLUGIN_EXEC_FROM == 'SCRIPTER_PLUGIN':
