@@ -32,7 +32,8 @@ When you want to execute *Newspaper*, simply go to **Tools** -> **Scripts** and 
 
 
 ### What's new?
-_[2021-08-24] Version 1.2.0_
+_[2021-11-30] Version 1.2.0_
+- Improvement: add possibility to open/save newspapers settings
 - Fix bug: now a layer located in a group layer is processed, don't need anymore to work on layer from document root
 - Fix bug: compatibility with Krita 5.1.x
 

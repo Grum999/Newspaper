@@ -19,10 +19,12 @@ from math import (
         sqrt
     )
 import os
+import os.path
 import random
 import re
 import sys
 import time
+import json
 
 import PyQt5.uic
 
@@ -1247,12 +1249,48 @@ class Newspaper(Extension):
         self.__pixmapStylePreviewApplied = None
         self.__stylePreviewModelNeedRefresh = False
 
+        self.__lastSettingsFile = ""
+        self.__pluginCfgFile = os.path.join(QStandardPaths.writableLocation(QStandardPaths.GenericConfigLocation), f'krita-plugin-{EXTENSION_ID}rc.json')
+        self.openCfgFile()
+
+        self.__inInit = False
+
         self.createCheckerBoard()
 
         # Always initialise the superclass.
         # This is necessary to create the underlying C++ object
         super().__init__(parent)
         self.parent = parent
+
+    def saveCfgFile(self):
+        """Save configuration file"""
+        jsonStruct = {
+                'lastSettingsFile': self.__lastSettingsFile
+            }
+
+        with open(self.__pluginCfgFile, 'w') as file:
+            try:
+                file.write(json.dumps(jsonStruct, indent=4, sort_keys=True))
+            except Exception as e:
+                return False
+
+    def openCfgFile(self):
+        """Save configuration file"""
+        if os.path.exists(self.__pluginCfgFile):
+            with open(self.__pluginCfgFile, 'r') as file:
+                try:
+                    jsonAsStr = file.read()
+                except Exception as e:
+                    return False
+
+                try:
+                    jsonAsDict = json.loads(jsonAsStr)
+                except Exception as e:
+                    return False
+
+            self.__lastSettingsFile = jsonAsDict['lastSettingsFile']
+            return True
+        return False
 
     def createCheckerBoard(self):
         tmpPixmap = QPixmap(32, 32)
@@ -1346,7 +1384,7 @@ class Newspaper(Extension):
         """Open dialog box to let user define channel extraction options"""
         self.inSizeEvent = False
         previewBaSrc = QByteArray()
-        inInit = True
+        self.__inInit = True
 
         # ----------------------------------------------------------------------
         def uiSetBtColor(button, color):
@@ -1366,7 +1404,7 @@ class Newspaper(Extension):
 
         def uiBuildStylePreview():
             """Generate style preview"""
-            if inInit:
+            if self.__inInit:
                 return
 
             outputWidth = dlgMain.btStylePreview.frameSize().width() - 8
@@ -1458,7 +1496,7 @@ class Newspaper(Extension):
 
         def uiBuildPreview():
             # set size of progress bar identical to button to avoid preview being resized
-            if not inInit:
+            if not self.__inInit:
                 dlgMain.pbProgress.reset()
                 dlgMain.pbProgress.setFixedHeight(dlgMain.btRefresh.height())
                 dlgMain.btRefresh.setVisible(False)
@@ -1712,6 +1750,92 @@ class Newspaper(Extension):
             dlgMain.grpbLayers.setMaximumSize(dlgMain.grpbOptionsOutput.size())
             uiBuildStylePreview()
 
+        def openSettings():
+            """Open dialog to open file, and load settings"""
+            fileName, dummy = QFileDialog.getOpenFileName(dlgMain, i18n("Open Newspaper settings"), self.__lastSettingsFile, "Newspaper settings file (*.nps)")
+            if fileName == '':
+                # cancel save action
+                return
+
+            with open(fileName, 'r') as file:
+                try:
+                    jsonAsStr = file.read()
+                except Exception as e:
+                    self.dBoxMessage(DBOX_WARNING, i18n("Unable to read file!"))
+                    return False
+
+                try:
+                    jsonAsDict = json.loads(jsonAsStr)
+                except Exception as e:
+                    self.dBoxMessage(DBOX_WARNING, i18n("Unable to parse file!"))
+                    return False
+
+            self.__lastSettingsFile = fileName
+
+            if 'format' in jsonAsDict and jsonAsDict['format'] == 'nps/1.0':
+                self.__inInit = True
+                # consider file format is valid from here
+                dlgMain.cmbMode.setCurrentIndex(jsonAsDict['output']['mode'])
+                dlgMain.cmbDotStyle.setCurrentIndex(jsonAsDict['output']['dotShape'])
+                dlgMain.dspbxSize.setValue(jsonAsDict['output']['dotSize'])
+                dlgMain.spbxAdjustment.setValue(jsonAsDict['output']['dotAdjustment'])
+                dlgMain.spbxSteadiness.setValue(jsonAsDict['output']['dotSteadiness'])
+                dlgMain.cmbSampling.setCurrentIndex(jsonAsDict['output']['sampling'])
+                dlgMain.cmbAntialiasing.setCurrentIndex(jsonAsDict['output']['antialiasing'])
+                dlgMain.cmbMonoDesaturateMode.setCurrentIndex(jsonAsDict['output']['desaturateMode'])
+                dlgMain.spbxMonoRotation.setValue(jsonAsDict['output']['rotation'])
+                self.__outputOptions['outputMonoFg'] = QColor(jsonAsDict['output']['foregroundColor'])
+                uiSetBtColor(dlgMain.btMonoFgColor, self.__outputOptions['outputMonoFg'])
+                self.__outputOptions['outputMonoBg'] = QColor(jsonAsDict['output']['backgroundColor'])
+                uiSetBtColor(dlgMain.btMonoBgColor, self.__outputOptions['outputMonoBg'])
+                dlgMain.cbxMonoBgTransparent.setChecked(jsonAsDict['output']['backgroundIsTransparent'])
+                dlgMain.cmbMonoDesaturateMode.setCurrentIndex(jsonAsDict['output']['desaturateMode'])
+                dlgMain.cmb4CScreenAngle.setCurrentIndex(jsonAsDict['output']['screenAngle'])
+
+                dlgMain.cmbOriginalLayer.setCurrentIndex(jsonAsDict['layerManagement']['originalLayer'])
+                dlgMain.leNewLayerGroupName.setText(jsonAsDict['layerManagement']['layerGroupName'])
+                dlgMain.leNewLayerColorName.setText(jsonAsDict['layerManagement']['layerColorName'])
+                self.__inInit = False
+                uiBuildStylePreview()
+
+        def saveSettings():
+            """Open dialog to save file, and save settings"""
+            fileName, dummy = QFileDialog.getSaveFileName(dlgMain, i18n("Save current settings"), self.__lastSettingsFile, "Newspaper settings file (*.nps)")
+            if fileName == '':
+                # cancel save action
+                return
+
+            jsonStruct = {
+                    'format': 'nps/1.0',
+                    'output': {
+                        'mode': dlgMain.cmbMode.currentIndex(),
+                        'dotShape': dlgMain.cmbDotStyle.currentIndex(),
+                        'dotSize': dlgMain.dspbxSize.value(),
+                        'dotAdjustment': dlgMain.spbxAdjustment.value(),
+                        'dotSteadiness': dlgMain.spbxSteadiness.value(),
+                        'sampling': dlgMain.cmbSampling.currentIndex(),
+                        'antialiasing': dlgMain.cmbAntialiasing.currentIndex(),
+                        'desaturateMode': dlgMain.cmbMonoDesaturateMode.currentIndex(),
+                        'rotation': dlgMain.spbxMonoRotation.value(),
+                        'foregroundColor': self.__outputOptions['outputMonoFg'].name(),  # QColor
+                        'backgroundColor': self.__outputOptions['outputMonoBg'].name(),  # QColor
+                        'backgroundIsTransparent': dlgMain.cbxMonoBgTransparent.isChecked(),
+                        'screenAngle': dlgMain.cmb4CScreenAngle.currentIndex()
+                    },
+                    'layerManagement': {
+                        'originalLayer': dlgMain.cmbOriginalLayer.currentIndex(),
+                        'layerGroupName': dlgMain.leNewLayerGroupName.text(),
+                        'layerColorName': dlgMain.leNewLayerColorName.text()
+                    }
+                }
+
+            with open(fileName, 'w') as file:
+                try:
+                    file.write(json.dumps(jsonStruct, indent=4, sort_keys=True))
+                    self.__lastSettingsFile = fileName
+                except Exception as e:
+                    self.dBoxMessage(DBOX_WARNING, i18n("unable to save document!"))
+
         # ----------------------------------------------------------------------
         # Create dialog box
         uiFileName = os.path.join(os.path.dirname(__file__), 'mainwindow.ui')
@@ -1836,8 +1960,13 @@ class Newspaper(Extension):
         dlgMain.dbbxOkCancel.accepted.connect(dlgMain.accept)
         dlgMain.dbbxOkCancel.rejected.connect(dlgMain.reject)
 
-        inInit = False
+        dlgMain.dbbxOpenSave.button(QDialogButtonBox.Open).clicked.connect(openSettings)
+        dlgMain.dbbxOpenSave.button(QDialogButtonBox.Save).clicked.connect(saveSettings)
+
+        self.__inInit = False
         returned = dlgMain.exec_()
+
+        self.saveCfgFile()
 
         return returned
 
