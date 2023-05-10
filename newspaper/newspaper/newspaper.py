@@ -108,7 +108,7 @@ else:
     PLUGIN_EXEC_FROM = 'SCRIPTER_PLUGIN'
 
 
-PLUGIN_VERSION = '1.2.0'
+PLUGIN_VERSION = '1.2.1'
 EXTENSION_ID = 'pykrita_newspaper'
 PLUGIN_MENU_ENTRY = 'Newspaper'
 PLUGIN_DIALOG_TITLE = "{0} - {1}".format('Newspaper', PLUGIN_VERSION)
