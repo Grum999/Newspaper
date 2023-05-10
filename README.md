@@ -17,7 +17,7 @@ Plugin provides differents tuning options to define final result:
 ## Download, Install & Execute
 
 ### Download
-+ **[ZIP ARCHIVE - v1.2.0](https://github.com/Grum999/Newspaper/releases/download/V1.2.0/newspaper.zip)**
++ **[ZIP ARCHIVE - v1.2.1](https://github.com/Grum999/Newspaper/releases/download/V1.2.1/newspaper.zip)**
 + **[SOURCE](https://github.com/Grum999/Newspaper)**
 
 
@@ -32,6 +32,9 @@ When you want to execute *Newspaper*, simply go to **Tools** -> **Scripts** and 
 
 
 ### What's new?
+_[2023-05-09] Version 1.2.1_
+- Fix bug *Krita 5.2.0 Compatibility*
+
 _[2021-11-30] Version 1.2.0_
 - Improvement: add possibility to open/save newspapers settings
 - Fix bug: now a layer located in a group layer is processed, don't need anymore to work on layer from document root
@@ -49,11 +52,7 @@ _[2020-05-01] Version 1.1.0_
 
 
 ### Bugs
-Plugin has been tested with Krita 5.0.0 (appimage) on Linux Debian 10
-- Tested on MacOS Catalina by @Carlos [thanks!], seems to work (_Version 4.2.9_)
-- Not tested on Linux non-appimage (ie: appimage include Python 3.8 + needed Qt libraries)
-- Tested on Windows 10 by @slls666 [thanks!], seems to work (_Version 4.2.9_)
-- Tested on Windows 8.1 by @djwaterman [thanks!], seems to work (_Version 4.2.9_)
+Plugin has been tested with Krita 5.2.0 (appimage)
 
 
 ### What’s next?

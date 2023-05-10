@@ -1876,7 +1876,7 @@ class Newspaper(Extension):
 
         dlgMain.hsldSize.valueChanged.connect(lambda v: onHsldSizeChanged(v))
         dlgMain.dspbxSize.valueChanged[float].connect(lambda v: onDspbxSizeChanged(v))
-        dlgMain.hsldSize.setValue(self.__outputOptions['outputSize'] * 100)
+        dlgMain.hsldSize.setValue(int(self.__outputOptions['outputSize'] * 100))
 
         dlgMain.hsldAdjustment.setValue(self.__outputOptions['outputAdjustment'])
         dlgMain.hsldAdjustment.valueChanged.connect(hsldAdjustment_Changed)
