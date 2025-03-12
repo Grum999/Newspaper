@@ -1,5 +1,9 @@
 # Newspaper
 
+> Note: has been moved on Codeberg
+> 
+> https://codeberg.org/Grum999/Newspaper
+
 A [Krita](https://krita.org/en) plugin to apply halftone effect on image.
 ![Example](https://github.com/Grum999/Newspaper/raw/master/newspaper/newspaper/newspaper.jpg)
 
